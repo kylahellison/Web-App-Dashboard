@@ -293,7 +293,7 @@ var pieChart = new Chart(mobileUsers, {
  };
 
  $("#u-search").easyAutocomplete(options);
-
+$('div.easy-autocomplete').removeAttr('style');
 
 /*=====  End of SEARCH FOR USER FUNCTION - message user  ======*/
 
