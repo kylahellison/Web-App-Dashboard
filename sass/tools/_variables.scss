@@ -1,0 +1,99 @@
+///////////////////////////
+////// COLOR PALETTE //////
+
+$white: #fff;
+$black: #000;
+$gray: #b6b6ba;
+$offwhite: #f0eff7;
+$verylightgray: #dfddee;
+$lightpurple: #a82dff;
+$darkpurple: #460f6d;
+$yellow: #f2f412;
+$lime: #31f412;
+$yellowgreen: #aef412;
+$darkgray: #4b4949;
+$darkgreen: #27b611;
+$darkergreen: #17650b;
+
+//////////////////////////
+////// COLOR CONFIG //////
+
+$primary-text: $black;
+$menu-text: $white;
+$header-bg: $lightpurple;
+$nav-bg: $darkpurple;
+$search-bg: $verylightgray;
+
+$mainbg: $offwhite;
+
+$alertbg: $darkgray;
+$alerttext: $yellowgreen;
+
+$selected-border: $lime; 
+
+$buttonbg: $darkergreen;
+$buttonoutline: $darkgreen;
+$buttontext: $yellowgreen;
+
+$social-icon: $yellowgreen;
+$social-widget-bg: lighten($lightpurple, 28%);
+
+$member-links: $darkgray;
+$member-links-hover: $lightpurple;
+
+$submit-button-bg: $darkpurple;
+$off-cancel-button-bg: $verylightgray;
+$submit-button-hover: $lightpurple;
+
+/////////////////////
+//* Button colors *//
+
+$box-shadow: #3dc21b;
+$background-bottom: #b8e622;
+$background-top: #54b023;
+$border-color: #18ab29;
+$text-color: $white;
+$text-shadow: #1d4018;
+
+$selected-background-top: #b8e622;
+$selected-box-shadow: #54b023;
+$selected-text-color: $darkergreen;
+
+////////////////////////
+////// FONT SIZES //////
+
+$h1-size: 1.5em;
+$mobile-h1: 1em;
+$mobile-h2: 0.8em;
+$h2-size: 1em;
+$h3-size: 0.8em;
+$mobile-h3: 0.7em;
+$span-size: 0.9em;
+$username-size: 0.8em;
+$regular-alert: 0.8em;
+$mobile-alert: 0.7em;
+$social-numbers: 1.8em;
+$member-activity: 0.8em;
+
+////////////////////////
+////// HEIGHTS //////
+
+$search-height: 30px;
+
+////////////////////////
+////// BORDERS//////
+
+$widget-borders: 2px inset $darkgray;
+$standard-border: 1px solid $black;
+$social-borders: 2px solid $black;
+$traffic-button-border: 1px solid $darkergreen;
+$social-button-border: 1px solid $black;
+
+//////////////////////////
+////// MEDIA QUERIES//////
+
+$tablet-width: 320px;
+$social-stat-row: 420px; //flex social stats to a row instead of column
+$mid-phone-tablet: 550px; //was 520 then was 550
+$footer-sizing: 660px; //fixes issues between 550 and 660
+$desktop-width: 1024px;

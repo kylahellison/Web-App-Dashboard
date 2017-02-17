@@ -1,0 +1,109 @@
+/*===============================
+=            GENERAL            =
+===============================*/
+
+body {
+	color: $primary-text;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: $mobile-h1;
+	margin: 0;
+	@include breakpoint(desktop) {
+		font-size: $h1-size;
+	}
+}
+
+h2 {
+	font-size: $mobile-h2;
+	@include breakpoint(tablet) {
+		font-size: $h2-size;
+	}
+}
+
+h3 {
+	font-size: $mobile-h3;
+	@include breakpoint(tablet) {
+		font-size: $h3-size;
+	}
+}
+
+span {
+	font-size: $span-size;
+}
+
+
+/*=================================
+=            SPECIFICS            =
+=================================*/
+
+//all of the header and navigation icons
+header,
+#navigation {
+	color: $menu-text;
+}
+
+//the username to the top right-hand corner of the page
+#username {
+	font-size: $username-size;
+}
+
+//the logo "YourApptm" to the top left-hand corner of the page
+.logo {
+	display: inline-block;
+	@include breakpoint(tablet) {
+		font-size: $h1-size;
+	}
+}
+
+//the text in the alert box
+#alert-text span {
+	color: $offwhite;
+	font-size: $mobile-alert;
+	@include breakpoint(tablet) {
+		font-size: $regular-alert;
+	}
+}
+
+//the traffic button links
+#trafficbuttons li a {
+	color: $offwhite;
+}
+
+//the h2s in the three social buttons
+#social-boxes h3 {
+	@include breakpoint(ltablet) {
+		font-size: $span-size;
+	}
+}
+
+#social-boxes h1 {
+	@include breakpoint(ltablet) {
+		font-size: $social-numbers;
+	}
+}
+
+//targets each of the social icon divs (the links within)
+.social-text a {
+	text-decoration: none;
+	color: $darkpurple;
+}
+
+#members-activity span a {
+	color: $member-links;
+}
+
+#members-activity span a:hover {
+	color: $member-links-hover;
+}
+
+.mheader {
+	padding-top: 8px;
+}
+
+.activity-text,
+.m-info p,
+.m-info span {
+	font-size: $member-activity;
+}

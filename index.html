@@ -1,0 +1,380 @@
+<!doctype HTML>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Your App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/easy-autocomplete.min.css"> 
+		<link rel="stylesheet" href="css/easy-autocomplete.themes.min.css"> 
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<div id="logo">
+				<h1 class="logo"> Your </h1> <span>App &#8482</span>
+			</div>
+			<div id="header-right">
+
+				<div id="bell">
+					<div class="dropdown">
+						<?xml version="1.0" encoding="utf-8"?>
+						<svg class="bell" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+							<style type="text/css">
+								.st0{fill:#FFFFFF;}
+							</style>
+							<g id="_x36__6_">
+								<g>
+									<path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+										c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+								</g>
+							</g>
+<!-- 							this rectangle needed to get a clickable space inside of the svg
+ -->							<rect onclick="dropAlert()" class="clickable" x="0" y="0" width="30" height="30"/>
+						</svg>
+						<div id="myDropdown" class="alert-content myDropdown">
+							<p>Here is sample alert #1!</p>
+							<hr>
+							<p>Here is a much longer version of a second alert - as you can see the text wraps.</p>
+						</div>
+					</div>
+				</div>
+
+				<div id="user-info">
+					<div id="profile-pic">
+					</div>
+					<span id="username">User Name</span>
+				</div>
+			</div>
+
+		</header>
+
+		<div id="wrapper">
+			<div id="left">
+				<div id="navigation">
+					<img src="images/icons/icon-dashboard.svg" alt="Dashboard icon" class="nav-icon" id="selected">
+					<img src="images/icons/icon-members.svg" alt="Dashboard icon" class="nav-icon">
+					<img src="images/icons/icon-visits.svg" alt="Dashboard icon" class="nav-icon">
+					<img src="images/icons/icon-settings.svg" alt="Dashboard icon" class="nav-icon">
+				</div>
+			</div>
+
+			<div id="right">
+				<div id="main-content">
+
+					<div id="top-bar">
+						<div id="title">
+							<h2 id="dashboard"> Dashboard </h2>
+						</div>
+						<div id="search-container">
+							<div id="search-flex">
+								<form action="index.html" method="get" id="flexform">
+									<input type="text" id="search" name="search_users" placeholder="Search">
+									<input type="button" name="search_button" id="search_button">
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div id="alert">
+						<div id="alert-text"><span>Hello! Your alert can go here and it can be as long or as short as you want it to be.</span></div>
+						<div id="close" onClick="hide('alert')"> <img src="images/icons/clear.svg" id="clear" alt="close box"> </div>
+					</div>
+
+					<div id="traffic-widget">
+						<div id="traffic-header-wrapper">
+							<h1>TRAFFIC</h1>
+							<ul id="trafficbuttons">
+								<li id="hourly" class="trafficbutton" onclick="toggleTrafficSelected(this);">Hourly</li>
+								<li id="daily" class="trafficbutton" onclick="toggleTrafficSelected(this);">Daily</li>
+								<li id="weekly" class="trafficbutton" onclick="toggleTrafficSelected(this);">Weekly</li>
+								<li id="monthly" class="trafficbutton selected" onclick="toggleTrafficSelected(this);">Monthly</li>
+							</ul>
+						</div>
+						<div class="lineChart">
+							<canvas id="line" ></canvas>
+						</div>
+					</div>
+
+					<div id="secondary-widgets">
+						<div id="daily-traffic">
+							<h1>DAILY TRAFFIC</h1>
+							<div class="barChart">
+								<canvas id="bar" ></canvas>
+							</div>
+						</div>
+						<div id="mobile-users">
+							<h1>MOBILE USERS</h1>
+							<div class="pieChart">
+								<canvas id="pie" ></canvas>
+							</div>
+						</div>
+					</div>
+
+					<div id="social-stats">
+						<h1>SOCIAL STATS</h1>
+						<div id="social-boxes">
+
+							<div id="twitter" class="social">
+								<div class="social-icon">
+								<img src="images/icons/icon-twitter.svg" class="social-svg" id="twittercon">
+								</div>
+								<div class="social-text">
+									<h3><a href="#">Twitter</a></h3>
+									<h1>10,345</h1>
+								</div>
+							</div>
+
+							<div id="facebook" class="social">
+								<div class="social-icon">
+								<img src="images/icons/icon-facebook.svg" class="social-svg">
+								</div>
+								<div class="social-text">
+									<h3><a href="#">Facebook</a></h3>
+									<h1>18,739</h1>
+								</div>
+							</div>
+
+							<div id="googleplus" class="social">
+								<div class="social-icon">
+									<img src="images/icons/icon-google-plus.svg" class="social-svg">
+								</div>
+								<div class="social-text">
+									<h3><a href="#">Google+</a></h3>
+									<h1>2,530</h1>
+								</div>
+							</div>
+
+							<div id="github" class="social">
+								<div class="social-icon">
+									<img src="images/icons/github.svg" class="social-svg">
+								</div>
+								<div class="social-text">
+									<h3><a href="#">Github</a></h3>
+									<h1>6,050</h1>
+								</div>
+							</div>
+
+							<div id="linkedin" class="social">
+								<div class="social-icon">
+									<img src="images/icons/linkedin.svg" class="social-svg">
+								</div>
+								<div class="social-text">
+									<h3><a href="#">LinkedIn</a></h3>
+									<h1>9,010</h1>
+								</div>
+							</div>
+
+							<div id="reddit" class="social">
+								<div class="social-icon">
+									<img src="images/icons/reddit.svg" class="social-svg">
+								</div>
+								<div class="social-text">
+									<h3><a href="#">Reddit</a></h3>
+									<h1>4,020</h1>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div id="activity">
+
+						<div id="members-activity">
+							<div class="header-box">
+								<h1 class="mheader">NEW MEMBERS</h1>
+							</div>
+							<div id="member-table"> 
+
+								<div class="member">
+									<div class="m-left">
+										<div class="member-pic johnsmith">
+										</div>
+										<div class="m-info">
+											<p>John Smith</p>
+											<span><a href="mailto:johnsmith@member.com">johnsmith@member.com</a></span>
+										</div>
+									</div>
+									<div class="m-right">
+										<span>12/1/16</span>
+									</div>
+								</div>
+
+								<div class="member">					
+									<div class="m-left">
+										<div class="member-pic samcook">
+										</div>
+										<div class="m-info">
+											<p>Sam Cook</p>
+											<span><a href="mailto:samcook@member.com">samcook@member.com</a></span>
+										</div>
+									</div>
+									<div class="m-right">
+										<span>4/1/16</span>
+									</div>
+								</div> 
+
+								<div class="member">
+									<div class="m-left">
+										<div class="member-pic andieday">
+										</div>
+										<div class="m-info">
+											<p>Andie Day</p>
+											<span><a href="mailto:andieday@member.com">andieday@member.com</a></span>
+										</div>
+									</div>
+									<div class="m-right">
+										<span>10/1/16</span>
+									</div>
+								</div>
+
+								<div class="member">
+									<div class="m-left">
+										<div class="member-pic rickcarlisle">
+										</div>
+										<div class="m-info">
+											<p>Rick Carlisle</p>
+											<span><a href="mailto:rickcarlisle@member.com">rickcarlisle@member.com</a></span>
+										</div>
+									</div>
+									<div class="m-right">
+										<span>1/1/17</span>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div id="recent-activity">
+							<div class="header-box">
+								<h1 class="mheader"> RECENT ACTIVITY </h1>
+							</div>
+							<div id="activity-table">
+
+								<div class="activity">
+									<div class="a-left">
+										<div class="member-pic johnsmith">
+										</div>
+										<div class="activity-text">
+											<p>John Smith commented on YourApp's SEO tips</p>
+											<p>4 hours ago</p>
+										</div>
+									</div>
+									<div class="usercomment"></div>
+								</div>
+
+								<div class="activity">
+									<div class="a-left">
+										<div class="member-pic samcook">
+										</div>
+										<div class="activity-text">
+											<p>Sam Cook signed up for YourApp.</p>
+											<p>8 hours ago</p>
+										</div>
+									</div>
+									<div class="userplus"></div>
+								</div>
+
+								<div class="activity">
+									<div class="a-left">
+										<div class="member-pic andieday">
+										</div>
+										<div class="activity-text">
+											<p>Andie Day commented on Facebook's SEO Changes</p>
+											<p>12 hours ago</p>
+										</div>
+									</div>
+									<div class="usercomment"></div>
+								</div>
+
+								<div class="activity">
+									<div class="a-left">
+										<div class="member-pic rickcarlisle">
+										</div>
+										<div class="activity-text">
+											<p>Rick Carlisle posted on YourApp's SEO tips</p>
+											<p>16 hours ago</p>
+										</div>
+									</div>
+									<div class="userpost"></div>
+								</div>
+							</div>	
+						</div>
+
+
+					</div>
+
+					<div id="footer">
+						<div id="message-user">
+							<div>
+								<h1>MESSAGE USER</h1>
+							</div>
+
+							<div id="user-search">
+								<form action="index.html" method="post" id="message-form" name="message"  onsubmit= "return validateForm()">
+									<input type="text" id="u-search" name="u-search" placeholder="Search for user" value="">
+									<textarea name="user-message" form="message-form" id="user-message" rows="5" cols="27" placeholder="Message for User"></textarea>
+									<input type="submit" value="submit" id="submit">
+								</form>
+							</div>
+
+						</div>
+
+						<div id="settings">
+							<div class="settings-container">
+								<div id="settings-h1">
+									<h1>SETTINGS</h1>
+								</div>
+							<div id="settingsForm">
+								<form action="index.html" method="post">
+									<div class="slide-toggle">
+										<p>Send Email Notifications</p>
+										<div class="ontoggle">
+											<input type="checkbox" name="ontoggle" class="ontoggle-checkbox" id="myonoffswitch1" checked>
+											<label class="ontoggle-label" for="myonoffswitch1" onclick="storeSettings()"> 
+												<span class="ontoggle-inner"></span>
+												<span class="ontoggle-switch"></span>
+											</label>
+										</div>
+									</div>
+									<div class="slide-toggle" id="second-toggle">
+										<p>Set Profile to Public</p>
+										<div class="ontoggle">
+											<input type="checkbox" name="ontoggle" class="ontoggle-checkbox" id="myonoffswitch2" checked>
+											<label class="ontoggle-label" for="myonoffswitch2">
+												<span class="ontoggle-inner"></span>
+												<span class="ontoggle-switch"></span>
+											</label>
+										</div>
+									</div>
+									<div id="settimezone">
+											<select name="timezonemenu" form="timezone" id="timezonemenu">
+												<option value="Set Timezone" selected>Set Timezone</option>
+												<option value="PST">PST</option>
+												<option value="CST">CST</option>
+												<option value="EST">EST</option>
+											</select>
+											<div id="settings-buttons">
+												<input type="submit" value="save" id="save">
+												<input type="submit" value="cancel" id="cancel">
+											</div>
+									</div>
+								</form>
+							</div>
+
+						</div>
+					</div>
+			</div>
+		</div>
+
+
+		<script src="js/Chart.bundle.min.js"></script>
+		<script src="js/jquery.easy-autocomplete.min.js"></script> 
+		<script src="js/app.js"></script>
+		
+	</body>
+
+</html>
+

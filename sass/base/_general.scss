@@ -1,0 +1,566 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*==============================
+=            HEADER            =
+==============================*/
+
+//the actual bell SVG
+.bell { 
+	@extend %small-icon-width-height;
+	box-sizing: content-box;
+	padding-right: 8px;
+}
+
+//the div used to get the circular profile picture
+#profile-pic { 
+	@extend %icon-width-height;
+	background: $white url("../images/icons/114-user.svg") no-repeat center;
+	background-size: cover;
+	border-radius: 50%;
+	border: $social-borders;
+	display: inline-block;
+	margin-right: 4px;
+}
+
+/*=======================================
+=            DROP DOWN ALERT            =
+=======================================*/
+
+rect.clickable {
+  stroke:#fff;
+  fill:#fff;
+  fill-opacity:0;
+  stroke-opacity:0;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.alert-content {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 39px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+    z-index: 100;
+    @include breakpoint(ltablet) {
+    	width: 280px;
+    }
+}
+
+.alert-content hr {
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* Links inside the dropdown */
+.alert-content p {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.alert-content p:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/*=====  End of DROP DOWN ALERT  ======*/
+
+
+/*==================================
+=            NAVIGATION            =
+==================================*/
+
+//this class targets each of the icon images in the navigation
+.nav-icon {
+	@extend %icon-width-height;
+	//margin-right: 7px;
+	padding: 5px;
+	box-sizing: content-box;
+	@include breakpoint(tablet) {	
+		margin: 10px auto;
+	}
+}
+
+//this targets just the currently selected SVG navigation icon
+#selected {
+	@include breakpoint(tablet) {
+		margin-left: 0;
+		padding-left: 2px;
+		box-sizing: content-box;
+		border-left: 4px solid $selected-border;
+	}
+}
+
+/*==================================
+=            SEARCH BOX            =
+==================================*/
+
+//this is the actual input area for your search
+#search {
+	max-width: 148px;
+	height: $search-height;
+	text-indent: 3px;
+	transition: all 0.15s;
+	@include breakpoint(ltablet) {
+		//min-width: 248px;
+	}
+}
+
+//supposed to target the placeholder text? 
+::-webkit-input-placeholder {
+	color: black;
+}
+:-moz-placeholder {
+	color: black;
+}
+::-moz-placeholder {
+	color: black;
+}
+:-ms-input-placeholder {
+	color: black;
+}
+ 
+#search:focus {
+	background: #fff;
+}
+
+//this targets the magnifying glass button
+#search_button {
+	//float: left;
+	border: none;
+	background: url("../images/icons/search.svg") center no-repeat;
+	min-width: 35px;
+	max-width: 40px;
+	padding: 0;
+	text-align: center;
+	height: $search-height;
+	cursor: pointer;
+	transition: all 0.15s;
+}
+
+/*=============================
+=            ALERT            =
+=============================*/
+
+#clear {
+	width: 20px;
+	height: 20px;
+}
+
+/*=========================================
+=            ALL LINKS/BUTTONS            =
+=========================================*/
+
+#close:hover,
+.nav-icon,
+#bell,
+#profile-pic,
+#username,
+#logo {
+	cursor: pointer;
+}
+
+/*==============================
+=            CHARTS            =
+==============================*/
+
+//the "traffic" heading 
+#traffic-header-wrapper h1 {
+	margin-bottom: 10px;
+	padding-top: 10px;
+	@include breakpoint(ltablet) {
+	margin-left: 10px;
+	margin-bottom: 0;
+	}
+}
+
+//the line chart canvas
+#line { 
+	padding: 10px 10px 15px 10px;
+	margin-bottom: 20px;
+	display: block;
+	width: 100%;
+	max-width: 300px;
+	@include breakpoint(tablet) {	
+		max-width: 700px;
+	}
+	@include breakpoint(desktop) {	
+		max-width: 1200px;
+	} 
+}
+
+//the bar chart canvas
+#bar {
+	padding: 15px 10px 10px 0;
+	width: 100%;
+	max-width: 300px;
+	@include breakpoint(tablet) {	
+		max-width: 400px;
+	}
+	@include breakpoint(desktop) {	
+		max-width: 500px;
+	}
+}
+
+// the pie chart canvas
+#pie {
+	padding: 15px 10px 10px 0;
+	width: 100%;
+	max-width: 300px;
+	@include breakpoint(tablet) {	
+		max-width: 400px;
+	}
+	@include breakpoint(desktop) {	
+		max-width: 500px;
+	}
+}
+
+/*===============================
+=            BUTTONS            =
+===============================*/
+
+//targets each of the traffic button list item buttons (the links)
+#trafficbuttons li {
+	list-style-type: none;	
+}
+
+//this class targets each of the traffic button list item buttons
+.trafficbutton {
+	margin: 4px;
+	padding: 4px;
+	border-radius: 10px;
+	@extend %traffic-widget-buttons;
+
+	@include breakpoint(ltablet) {
+	margin: 8px;
+	padding: 8px;
+	}
+}
+
+.trafficbutton:hover {
+	@extend %traffic-widget-buttons-hover;
+}
+
+.trafficbutton:active {
+	@extend %traffic-widget-buttons-active;
+}
+
+.trafficbutton:first-child {
+	margin-left: 0;
+}
+
+.trafficbutton:last-child {
+	margin-right: 0;
+}
+
+//this is the selected traffic button color
+
+.selected {
+	@extend %traffic-widget-buttons-selected; 
+}
+
+/*====================================
+=            SOCIAL ICONS            =
+====================================*/
+
+
+//the actual svg image
+.social-svg {
+	height: 30px;
+	width: 30px;
+	padding: 2px;
+}
+
+//targets each of the six social button divs
+.social {
+	padding: 4px; //15px?
+	border: $social-borders;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	height: 70px; //50
+	min-height: 70px; //50
+	min-width: 125px;
+	max-width: 125px; //140
+	background-color: $social-widget-bg;
+
+	@include breakpoint(tablet) {	
+		margin-bottom: 15px;
+		height: 70px;
+		min-height: 70px;
+
+	}
+
+	@include breakpoint(ltablet) {
+		padding: 8px;
+		min-width: 156px;
+		max-width: 158px;
+	}
+}
+
+.social:nth-child(odd) {
+	margin-right: 10px;
+
+	@include breakpoint(ltablet) {
+		margin-right: 0;
+	}
+}
+
+//targets the div containing the twitter button svg - 
+//had to give it padding because it's top-aligned for some reason?
+#twittercon {
+	padding-top: 6px;
+}
+
+/*=======================================
+=            MEMBER ACTIVITY            =
+=======================================*/
+
+//ths is for the clickable arrows in the recent activity widget
+.usercomment {
+	background-color: $black;
+	background: url("../images/icons/109-bubbles.svg") no-repeat center;
+}
+
+.userplus {
+	background-color: $black;
+	background: url("../images/icons/116-user-plus.svg") no-repeat center;
+}
+
+.userpost {
+	background-color: $black;
+	background: url("../images/icons/108-bubble.svg") no-repeat center;
+}
+
+.usercomment,
+.userplus,
+.userpost {
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	 // -webkit-background-size: cover;
+	 // -moz-background-size: cover;
+	 // -o-background-size: cover;
+	 // background-size: cover;
+}
+
+//This is for the h1s in the new members and recent activity widgets
+.mheader {
+	margin-bottom: 10px;
+}
+
+
+//individual member pictures! 
+//BETTER WAY TO DO THIS?? How would you do it if it were a large scale site?
+.johnsmith {
+	background: $white url("../images/icons/user1.jpg") no-repeat center;
+}
+
+.samcook {
+	background: $white url("../images/icons/user3.jpg") no-repeat center;
+}
+
+.andieday {
+	background: $white url("../images/icons/user4.jpg") no-repeat center;
+}
+
+.rickcarlisle {
+	background: $white url("../images/icons/user2.jpg") no-repeat center;
+}
+
+.member-pic {
+	@extend %icon-width-height;
+	border-radius: 50%;	
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+}
+
+
+/*====================================
+=            MESSAGE USER            =
+====================================*/
+
+//the search for user input box
+#u-search {
+	z-index: 1;
+}
+
+.easy-autocomplete {
+	width: 100%
+	// @include breakpoint(ltablet) {
+	// 	width: 262px;
+	// }
+}
+
+#u-search,
+#timezonemenu {
+	width: 200px;
+	margin-bottom: 10px;
+	margin-top: 15px;
+	padding: 10px;
+
+    @include breakpoint(footerissue) {
+		width: 262px;
+	}
+
+}
+
+//The textarea
+#user-message {
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 200px; 
+	height: 115px;
+
+	   @include breakpoint(footerissue) {
+		width: 262px;
+	}
+}
+
+//the submit button
+#submit,
+#save,
+#cancel {
+	width: 100px;
+	background-color: $submit-button-bg;
+	color: $buttontext;
+	border-radius: 5px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+#submit {
+	width: 200px;
+
+    @include breakpoint(footerissue) {
+		width: 262px;
+	}
+}
+
+#settings-h1 {
+	margin-bottom: 15px;
+}
+
+
+#second-toggle {
+	margin-bottom: 15px;
+}
+
+#timezonemenu {
+	width: 200px;
+
+    @include breakpoint(footerissue) {
+		width: 262px;
+	}
+}
+ 
+/*==========================================================
+=            TOGGLE SWITCHES on/off in SETTINGS            =
+==========================================================*/
+
+.slide-toggle {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.slide-toggle p {
+	font-size: 1em;
+	margin-right: 10px;
+
+    @include breakpoint(ltablet) {
+		font-size: 0.8em;
+	}
+    @include breakpoint(footerissue) {
+		font-size: 1em;
+	}
+}
+
+.ontoggle {
+    position: relative; width: 75px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.ontoggle-checkbox {
+    display: none;
+}
+.ontoggle-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 15px;
+}
+.ontoggle-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.ontoggle-inner:before, .ontoggle-inner:after {
+    display: block; 
+    float: left; 
+    width: 50%; 
+    height: 24px; 
+    padding: 0; 
+    line-height: 24px;
+    font-size: 14px; 
+    color: white; 
+    font-family: Trebuchet, Arial, sans-serif; 
+    font-weight: bold;
+    box-sizing: border-box;
+
+    @include breakpoint(ltablet) {
+		height: 30px;
+		line-height: 30px;
+	}
+}
+.ontoggle-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #460F6D; color: #AEF412;
+}
+.ontoggle-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.ontoggle-switch {
+    display: block; width: 18px; margin: 3px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 47px;
+    border: 2px solid #999999; border-radius: 15px;
+    transition: all 0.3s ease-in 0s; 
+
+    @include breakpoint(ltablet) {
+		margin: 6px;
+		right: 41px;
+	}
+
+}
+.ontoggle-checkbox:checked + .ontoggle-label .ontoggle-inner {
+    margin-left: 0;
+}
+.ontoggle-checkbox:checked + .ontoggle-label .ontoggle-switch {
+    right: 2px; 
+
+       @include breakpoint(ltablet) {
+		right: 0px;
+	}
+}
+
+/*=====  End of TOGGLE SWITCHES on/off in SETTINGS  ======*/
+
+

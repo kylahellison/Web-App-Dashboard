@@ -1,0 +1,21 @@
+///////////////////////////
+////// MEDIA QUERIES //////
+
+@mixin breakpoint($point) {
+	@if $point == tablet {
+		@media (min-width: #{$tablet-width}) { @content;}
+	}
+	@else if $point == mtablet {
+		@media (min-width: #{$social-stat-row}) { @content;}
+	}
+	@else if $point == ltablet
+	 {
+		@media (min-width: #{$mid-phone-tablet}) { @content;}
+	}
+	@else if $point == footerissue {
+		@media (min-width: #{$footer-sizing}) { @content;}
+	}
+	@else if $point == desktop {
+		@media (min-width: #{$desktop-width}) { @content;}
+	}
+}

@@ -1,0 +1,76 @@
+/*=============================
+=            ICONS            =
+=============================*/
+
+%icon-width-height {
+	width: 1.7em;
+	height: 1.7em;
+}
+
+%small-icon-width-height {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+
+/*=======================================
+=            TRAFFIC BUTTONS            =
+=======================================*/
+
+%traffic-widget-buttons {
+  -moz-box-shadow: 3px 4px 0px 0px $box-shadow;
+  -webkit-box-shadow: 3px 4px 0px 0px $box-shadow;
+  box-shadow: 3px 4px 0px 0px $box-shadow;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, $background-bottom), color-stop(1, $background-top));
+  background:-moz-linear-gradient(top, $background-bottom 5%, $background-top 100%);
+  background:-webkit-linear-gradient(top, $background-bottom 5%, $background-top 100%);
+  background:-o-linear-gradient(top, $background-bottom 5%, $background-top 100%);
+  background:-ms-linear-gradient(top, $background-bottom 5%, $background-top 100%);
+  background:linear-gradient(to bottom, $background-bottom 5%, $background-top 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$background-bottom', endColorstr='$background-top',GradientType=0);
+  background-color:$background-bottom;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius:5px;
+  border:1px solid $border-color;
+  display:inline-block;
+  cursor:pointer;
+  color:$text-color;
+  font-family:Arial;
+  font-size:16px;  //17px
+  font-weight:bold;
+  padding:12px 44px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px $text-shadow;
+}
+
+%traffic-widget-buttons-hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, $background-top), color-stop(1, $background-bottom));
+  background:-moz-linear-gradient(top, $background-top 5%, $background-bottom 100%);
+  background:-webkit-linear-gradient(top, $background-top 5%, $background-bottom 100%);
+  background:-o-linear-gradient(top, $background-top 5%, $background-bottom 100%);
+  background:-ms-linear-gradient(top, $background-top 5%, $background-bottom 100%);
+  background:linear-gradient(to bottom, $background-top 5%, $background-bottom 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$background-top', endColorstr='$background-bottom',GradientType=0);
+  background-color:$background-top;
+}
+
+%traffic-widget-buttons-active {
+  position:relative;
+  top:1px;
+}
+
+
+%traffic-widget-buttons-selected {
+  box-shadow: 3px 4px 0px 0px $selected-box-shadow;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, $selected-background-top), color-stop(1, $selected-background-top));
+  background:-moz-linear-gradient(top, $selected-background-top 5%, $selected-background-top 100%);
+  background:-webkit-linear-gradient(top, $selected-background-top 5%, $selected-background-top 100%);
+  background:-o-linear-gradient(top, $selected-background-top 5%, $selected-background-top 100%);
+  background:-ms-linear-gradient(top, $selected-background-top 5%, $selected-background-top 100%);
+  background:linear-gradient(to bottom, $selected-background-top 5%, $selected-background-top 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$selected-background-top', endColorstr='$selected-background-top',GradientType=0);
+  background-color:$background-top;
+  color: $selected-text-color;
+  text-shadow: none;
+}

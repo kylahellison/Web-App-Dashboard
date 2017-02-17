@@ -1,0 +1,491 @@
+
+body {
+	height: 100vh;
+	background-color: $mainbg;
+}
+
+#wrapper {
+	height: 100vh;
+	width: 100%;
+}
+
+/*=============================================
+=            HEADER AND NAV BAR           =
+=============================================*/
+
+//The whole header container
+header {
+	top: 0px;   //sticky header
+	height: 50px;  //sticky header
+	background-color: $header-bg;
+	z-index: 100;
+}
+
+//container for the text "your app" on top left
+#logo {
+	margin-left: 5px;
+}
+
+//the whole header and the right side that contains the bell, profile pic and username
+header,
+#header-right {
+	padding: 3px;
+}
+
+//container for the bell SVG
+#bell {
+	border-right: 1px solid white;
+	height: 35px;
+	margin: 0 6px 0 4px;
+}
+
+//The whole header and the left side that contains the navigation
+header,
+#left {
+	position: fixed;  //sticky header
+	width: 100%;  //sticky header
+} 
+
+//the container for the whole left side that contains the navigation
+#left {
+	top: 50px;  //sticky header
+	height: 45x;  //sticky header
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 2px;
+	background-color: $nav-bg;
+	z-index: 10;	
+	@include breakpoint(tablet) {
+		width: 45px;
+		height: 100vh;
+		z-index: 1; 
+	}
+}
+
+//the container for the navigation buttons
+#navigation {
+	@include breakpoint(tablet) {
+		height: 100vh;
+		width: 45px;
+		padding-top: 5px;
+	}
+}
+
+/*=====  End of HEADER AND NAV BAR comment block  ======*/
+
+/*========================================
+=            JAVASCRIPT ALERT            =
+========================================*/
+
+//container for the alert message
+#alert {
+	width: 95%;
+	min-height: 40px;
+	background-color: $alertbg;
+	padding: 5px;
+	margin: 15px auto 10px auto;
+	border-radius: 5px;
+	border: 2px solid $black;
+
+	@include breakpoint(ltablet) {
+		margin: 15px auto 2px;;
+	}
+}
+
+//containing div for the X to close the alert message
+#close {
+	margin-left: 5px;
+	width: 20px;
+	height: 20px;
+	//background: url("../images/icons/clear.svg") center no-repeat;
+}
+
+/*=====  End of JAVASCRIPT ALERT  ======*/
+
+
+
+
+/*==================================
+=            SEARCH BAR            =
+==================================*/
+
+//containing div for the search input box
+#top-bar {
+	width: 100%;
+	min-height: 50px;  //NEED TO USE MIN-HEIGHT FOR CHROME!!!!! OTHERWISE IT COLLAPSES
+}
+
+//this wraps the h2 "dashboard" 
+#title {
+	width: 120px;
+	@include breakpoint(tablet) {
+		width: 152px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+//this div contains the div below that has the search box components 
+#search-container {
+	width: 100%;
+	padding: 10px 0 10px 5px;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: $search-bg;
+}
+
+//this div wraps components of the search box (the form itself, the text box, and the button)
+#search-flex {
+	max-width: 150px;
+	@include breakpoint(ltablet) {	
+		max-width: 250px;
+	}
+}
+
+/*=====  End of SEARCH BAR  ======*/
+
+
+
+/*====================================
+=            MAIN CONTENT            =
+====================================*/
+
+//this wraps all of the main content
+#right {
+	margin-top: 96px;  //sticky header
+	width: 100%;
+	background-color: $mainbg;
+	@include breakpoint(tablet) {	
+		margin-top: 49px;
+		padding-left: 46px;
+		height: 100vh;
+	}
+}
+
+/*==============================
+=            CHARTS            =
+==============================*/
+
+canvas {
+	-moz-user-select: none;
+	-webkid-user-select: none;
+	-ms-user-select: none;
+}
+
+//div wrapping all components of the line chart
+#traffic-widget {
+	min-height: 320px;
+
+	@include breakpoint(ltablet) {	
+		margin-top: 2px;
+		margin-bottom: 10px;
+	}
+}
+
+//div wrapping the h1 and unordered list buttons
+#traffic-header-wrapper {
+	min-height: 90px;
+	margin-bottom: 10px;
+	@include breakpoint(ltablet) {	
+		min-height: 50px;
+	}
+}
+
+//the unordered list used to make the buttons
+#trafficbuttons {
+	min-height: 40px;
+	@include breakpoint(tablet) {
+		padding: 10px;
+	}
+}
+
+//the div containing the linechart canvas
+.lineChart {
+	height: 280px;
+	width: 100%;
+	@include breakpoint(tablet) {
+		height: 300px;
+	}
+	@include breakpoint(ltablet) {
+		margin-bottom: 30px;
+		margin-top: 15px;
+	}
+}
+
+//the div wrapping the daily traffic and mobile users widgets
+#secondary-widgets {
+	min-height: 380px;
+
+	@include breakpoint(ltablet) {
+		min-height: 220px;
+	}
+}
+
+//the divs containing the bar and pie charts
+.barChart,
+.pieChart {
+	height: 150px;
+	width: 100%;
+}
+
+#daily-traffic, //div containing the daily traffic h1 and div with bar chart canvas
+#mobile-users { //div containing the mobile users h1 and div with pie chart canvas
+	width: 100%;
+	padding-top: 15px;
+	padding-bottom: 10px;
+
+	@include breakpoint(ltablet) {
+		width: 40%;
+	}
+}
+
+
+//div containing the mobile users h1 and div with pie chart canvas
+#mobile-users {
+	margin-bottom: 0;
+}
+
+/*====================================
+=            SOCIAL STATS            =
+====================================*/
+
+//container that wraps the header and all of the social stat icons
+#social-stats {
+	width: 100%;
+	min-height: 315px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	@include breakpoint(tablet) {
+		padding-bottom: 15px;
+	}
+	@include breakpoint(ltablet) {
+		min-height: 240px;
+		border-bottom: $social-borders;
+		border-top: $social-borders;
+	}
+}
+
+//container that wraps just the three social boxes
+#social-boxes {
+	min-width: 30%; //20
+	max-width: 275px; //220
+	margin-top: 10px;
+	min-height: 230px;
+
+
+	@include breakpoint(ltablet) {	
+		width: 100%;
+		max-width: 580px;
+		min-height: 90px;
+	}
+}
+
+//social icon class targets the divs that just wrap each of the social svgs within each social button
+.social-icon {
+	background-color: $social-icon;
+	border-radius: 50%;
+	border: $social-borders;
+	height: 40px;
+	width: 40px;
+	margin-right: 8px;
+
+}
+
+//social text class targets the divs that wrap the text within each social button
+.social-text {
+	margin-left: 4px;
+}
+
+
+/*===================================
+=            MEMBER INFO            =
+===================================*/
+
+//wraps both the new members and recent activity widgets
+#activity {
+	width: 100%;
+	min-height: 740px;
+	height: 740px;
+	padding-bottom: 15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@include breakpoint(ltablet) {
+		height: 350px;
+		min-height: 350px;
+	}
+}
+
+#members-activity, //wraps all of the new member widget
+#recent-activity { //wraps all of the recent activity widget
+	width: 100%;
+	height: 375px;
+	padding: 5px 10px 5px;
+	@include breakpoint(ltablet) {	
+		width: 50%;
+		height: 350px;
+	}
+	@include breakpoint(desktop) {
+		max-width: 500px;
+	}
+}
+
+#members-activity {
+	@include breakpoint(ltablet) {
+		border-right: $widget-borders;
+	}
+}
+
+#members-activity,
+#message-user {
+	@include breakpoint(ltablet) {
+		padding-right: 10px;
+		
+	}
+}
+
+#recent-activity {
+	@include breakpoint(ltablet) {
+		padding-left: 10px;
+	}
+}
+
+
+//these need a height specified for justify-content space-between to work
+#member-table,
+#activity-table { 
+		height: 100%;
+		width: 100%;
+	}
+
+.member, //this class targets each of the divs holding one new member's info
+.activity { //this class targets each of the divs holding one piece of recent activity
+	width: 100%;
+	height: 80px;
+	padding-bottom: 17px;
+	padding-top: 17px;
+	border-bottom: $widget-borders;
+	@include breakpoint(ltablet) {	
+		height: 64px;
+		padding-bottom: 5px;
+		padding-top: 5px;
+	}
+}
+
+.member:last-child,
+.activity:last-child {
+	border-bottom: 0;
+}
+
+.member:first-child,
+.activity:first-child {
+	padding-top: 0;
+}
+
+//needs padding in mobile view! padding matches size of profile-pic +margin
+.m-right {
+	padding-left: 36px;
+	@include breakpoint(ltablet) {
+		padding-left: 0;
+	}
+}
+
+.member-pic {
+	margin-right: 10px;
+}
+
+.activity-text {
+	width: 80%;
+	@include breakpoint(mtablet) {	
+		width: 90%;
+	}
+	@include breakpoint(desktop) {	
+		width: 100%;
+	}
+}
+
+/*=====  End of MAIN CONTENT  ======*/
+
+
+/*=========================================================
+=            FOOTER: MESSAGE USER AND SETTINGS            =
+=========================================================*/
+
+
+/*====================================
+=            MESSAGE USER            =
+====================================*/
+
+//wraps the message user widget and the settings widget
+#footer {
+	min-height: 600px;
+	width: 100%;
+	border-top: $social-borders;
+
+	@include breakpoint(ltablet) {
+		padding-left: 0;
+		margin-bottom: 20px;
+		min-height: 330px;
+	}
+}
+
+//this targets the div holding the span "search for users"
+#user-search {
+	min-height: 20px;
+}
+
+#message-user, // *NOT MEMBER INFO*// wraps all of the search for and message user widget
+#settings { // *NOT MEMBER INFO*// wraps all of the settings widget
+	padding-top: 20px;
+	width: 100%;
+	min-height: 190px;
+	
+	@include breakpoint(ltablet) {	
+		width: 50%;
+		height: 284px;
+	}
+}
+
+#message-user {
+	margin-bottom: 20px;
+	@include breakpoint(ltablet) {
+		border-right: $widget-borders;
+		margin-bottom: 0;
+	}
+}
+
+#settingsbuttons {
+	width: 100%;
+}
+
+#settings {
+	margin-bottom: 20px;
+	margin-top: 40px;
+	padding-right: 10px;
+	padding-left: 10px;
+	@include breakpoint(ltablet) {	
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+
+
+/*=====  End of FOOTER: MESSAGE USER AND SETTINGS  ======*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

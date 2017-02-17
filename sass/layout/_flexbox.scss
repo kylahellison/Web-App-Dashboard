@@ -1,0 +1,255 @@
+header,
+#header-right, //holds the bell icon, profile pic, and username
+#bell, //holds the SVG bell
+#user-info, //wraps the profile pic and username to the right of the bell
+#wrapper, //wraps the rest of the content below the header
+#left, //contains the navigation icons to left of page 
+#navigation, //wraps the four navigation icons
+#right, //contains the main body of the page other than the header and nav
+#main-content, //wraps everything inside of the Right container
+#top-bar, //contains the search bar and "dashboard" tab
+#title, //contains the "dashboard tab"
+#search-container, //contains the search form
+#search, ////not sure what this goes to -- was it supposed to be search-flex?////
+#flexform, //this is the form that contains the search and search button
+#alert, //contains the entire alert
+#close, //within the #alert - this is the X to close the alert
+#traffic-widget, //contains the first line graph and its buttons
+#traffic-header-wrapper, //wraps the TRAFFIC h1 and the buttons
+#trafficbuttons, //the list of traffic buttons
+.lineChart, //line chart container
+#secondary-widgets, //contains the daily traffic and mobile user widgets
+#daily-traffic, //div that wraps just the daily traffic widget
+.barChart, //bar chart container
+#mobile-users, //div that wraps just the mobile users widget
+.pieChart, //pie chart container
+#social-stats, //wraps all of the social buttons and title
+#social-boxes, //wraps just the three social buttons
+.social, //each of the social button divs
+.social-icon, //each of the divs wrapping the SVGs in the social buttons
+.social-text, //each of hte divs wrapping the text in the social buttons
+#activity, //div wrapping the new member activity widget and recent avtivity widget
+.activity, //each recent activity table row
+#members-activity, //div wrapping the entire new members section
+#member-table, //the div table for new members
+.member, //each member's div (row in a table)
+.m-left, //the div inside the member div holding the user profile pic, name and email
+.a-left, //the div that wraps the member activities
+#recent-activity, //div wrapping the entire recent activity section
+#activity-table, //the div table for recent activity
+#footer,
+#message-user,
+#settings,
+#settingsForm,
+.settings-container,
+#settings-buttons, //save and cancel buttons
+.header-box,
+#message-form,
+.slide-toggle,
+#settimezone,
+#timezonemenu { //the settings slide toggle buttons
+	display: flex;
+}
+
+#wrapper {
+	align-items: flex-start;
+}
+
+#wrapper, 
+#right, 
+#main-content, 
+#traffic-widget,
+#traffic-header-wrapper,
+#secondary-widgets,
+#daily-traffic,
+#mobile-users,
+#social-stats,
+.social-text,
+.activity-text,
+#activity,
+#members-activity,
+#member-table,
+#recent-activity,
+#member-table,
+.m-info,
+.activity-text,
+#activity-table,
+#message-user,
+.settings-container,
+#settings,
+#settingsForm,
+#footer,
+#message-form,
+#settimezone,
+//#timezonemenu,
+#settingsbuttons {
+	flex-direction: column;
+}
+
+header,
+#top-bar,
+#alert,
+#member-table,
+#activity-table,
+.member,
+.activity,
+.slide-toggle,
+#settings-buttons, {
+	justify-content: space-between;
+}
+
+#social-boxes {
+	justify-content: space-around;
+}
+
+
+header,
+#header-right,
+#bell,
+#user-info,
+#left,
+#navigation,
+#top-bar,
+#title,
+#alert,
+#close,
+#trafficbuttons,
+#traffic-header-wrapper,
+#daily-traffic,
+#mobile-users,
+#social-stats,
+.social,
+.social-icon,
+#members-activity,
+#member-table,
+.member,
+.m-left,
+#recent-activity,
+#activity-table,
+.activity,
+.a-left,
+#message-user,
+#message-form,
+#settings,
+.settings-container,
+#message-user,
+#settimezone,
+#footer,
+.slide-toggle {
+	align-items: center;	
+}
+
+
+.social-text {
+	align-items: flex-start;
+}
+
+
+
+#settings-h1 {
+	align-self: center;
+}
+
+#social-boxes {
+	flex-wrap: wrap;
+}
+
+#left,
+#title,
+#close,
+#header-right,
+#traffic-header-wrapper,
+.lineChart,
+#secondary-widgets,
+.barChart,
+.pieChart,
+#daily-traffic,
+#mobile-users,
+#social-stats,
+.social-icon,
+#members-activity,
+#recent-activity,
+#activity,
+#message-user,
+#settings,
+#settimezone,
+#footer {
+	justify-content: center;
+}
+
+#header-right {
+	flex-grow: 2;
+	justify-content: flex-end;	
+}
+
+
+
+//MEDIA QUERIES
+
+.nav-icon-border,
+#navigation {
+	@include breakpoint(tablet) {
+		flex-direction: column;
+	}
+}
+
+#wrapper,
+#alert-text {
+	@include breakpoint(tablet) {
+		flex-wrap: wrap;	
+	}
+}
+
+#traffic-header-wrapper {
+	@include breakpoint(ltablet) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+#search-container {
+	@include breakpoint(ltablet) {
+		justify-content: flex-end;	
+	}
+}
+
+#social-boxes {
+	@include breakpoint(ltablet) {
+		flex-direction: row;
+		justify-content: space-between;	
+	}
+}
+
+#secondary-widgets {
+	@include breakpoint(ltablet) {
+		flex-direction: row;	
+	}
+}
+
+#activity {
+	@include breakpoint(ltablet) {
+		flex-direction: row;	
+	}
+}
+
+
+#footer {
+	@include breakpoint(ltablet) {	
+		flex-direction: row;
+		justify-content: space-around; //flex-start
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
