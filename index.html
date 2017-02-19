@@ -15,13 +15,13 @@
 	<body>
 		<header>
 			<div id="logo">
-				<h1 class="logo"> Your </h1> <span>App &#8482</span>
+				<h1 class="logo"> Your </h1> <span>App &#8482;</span>
 			</div>
 			<div id="header-right">
 
 				<div id="bell">
 					<div class="dropdown">
-						<?xml version="1.0" encoding="utf-8"?>
+			<!-- 			<?xml version="1.0" encoding="utf-8"?> -->
 						<svg class="bell" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
 							<style type="text/css">
 								.st0{fill:#FFFFFF;}
@@ -56,9 +56,9 @@
 			<div id="left">
 				<div id="navigation">
 					<img src="images/icons/icon-dashboard.svg" alt="Dashboard icon" class="nav-icon" id="selected">
-					<img src="images/icons/icon-members.svg" alt="Dashboard icon" class="nav-icon">
-					<img src="images/icons/icon-visits.svg" alt="Dashboard icon" class="nav-icon">
-					<img src="images/icons/icon-settings.svg" alt="Dashboard icon" class="nav-icon">
+					<img src="images/icons/icon-members.svg" alt="Members icon" class="nav-icon">
+					<img src="images/icons/icon-visits.svg" alt="Visits icon" class="nav-icon">
+					<img src="images/icons/icon-settings.svg" alt="Settings icon" class="nav-icon">
 				</div>
 			</div>
 
@@ -73,15 +73,19 @@
 							<div id="search-flex">
 								<form action="index.html" method="get" id="flexform">
 									<input type="text" id="search" name="search_users" placeholder="Search">
-									<input type="button" name="search_button" id="search_button">
+									<input type="button" name="search_button" id="search_button" value=" ">
 								</form>
 							</div>
 						</div>
 					</div>
 
 					<div id="alert">
-						<div id="alert-text"><span>Hello! Your alert can go here and it can be as long or as short as you want it to be.</span></div>
-						<div id="close" onClick="hide('alert')"> <img src="images/icons/clear.svg" id="clear" alt="close box"> </div>
+						<div id="alert-text">
+							<span>Hello! Your alert can go here and it can be as long or as short as you want it to be.</span>
+						</div>
+						<div id="close" onClick="hide('alert')"> 
+							<img src="images/icons/clear.svg" id="clear" alt="close box"> 
+						</div>
 					</div>
 
 					<div id="traffic-widget">
@@ -120,7 +124,7 @@
 
 							<div id="twitter" class="social">
 								<div class="social-icon">
-								<img src="images/icons/icon-twitter.svg" class="social-svg" id="twittercon">
+								<img src="images/icons/icon-twitter.svg" alt="twitter icon" class="social-svg" id="twittercon">
 								</div>
 								<div class="social-text">
 									<h3><a href="#">Twitter</a></h3>
@@ -130,7 +134,7 @@
 
 							<div id="facebook" class="social">
 								<div class="social-icon">
-								<img src="images/icons/icon-facebook.svg" class="social-svg">
+								<img src="images/icons/icon-facebook.svg" alt="facebook icon" class="social-svg">
 								</div>
 								<div class="social-text">
 									<h3><a href="#">Facebook</a></h3>
@@ -140,7 +144,7 @@
 
 							<div id="googleplus" class="social">
 								<div class="social-icon">
-									<img src="images/icons/icon-google-plus.svg" class="social-svg">
+									<img src="images/icons/icon-google-plus.svg" alt="googleplus icon" class="social-svg">
 								</div>
 								<div class="social-text">
 									<h3><a href="#">Google+</a></h3>
@@ -150,7 +154,7 @@
 
 							<div id="github" class="social">
 								<div class="social-icon">
-									<img src="images/icons/github.svg" class="social-svg">
+									<img src="images/icons/github.svg" alt="github icon" class="social-svg">
 								</div>
 								<div class="social-text">
 									<h3><a href="#">Github</a></h3>
@@ -160,7 +164,7 @@
 
 							<div id="linkedin" class="social">
 								<div class="social-icon">
-									<img src="images/icons/linkedin.svg" class="social-svg">
+									<img src="images/icons/linkedin.svg" alt="linkin icon" class="social-svg">
 								</div>
 								<div class="social-text">
 									<h3><a href="#">LinkedIn</a></h3>
@@ -170,7 +174,7 @@
 
 							<div id="reddit" class="social">
 								<div class="social-icon">
-									<img src="images/icons/reddit.svg" class="social-svg">
+									<img src="images/icons/reddit.svg" alt="reddit icon" class="social-svg">
 								</div>
 								<div class="social-text">
 									<h3><a href="#">Reddit</a></h3>
@@ -300,11 +304,13 @@
 									</div>
 									<div class="userpost"></div>
 								</div>
+
 							</div>	
 						</div>
 
 
 					</div>
+
 
 					<div id="footer">
 						<div id="message-user">
@@ -327,47 +333,48 @@
 								<div id="settings-h1">
 									<h1>SETTINGS</h1>
 								</div>
-							<div id="settingsForm">
-								<form action="index.html" method="post">
-									<div class="slide-toggle">
-										<p>Send Email Notifications</p>
-										<div class="ontoggle">
-											<input type="checkbox" name="ontoggle" class="ontoggle-checkbox" id="myonoffswitch1" checked>
-											<label class="ontoggle-label" for="myonoffswitch1" onclick="storeSettings()"> 
-												<span class="ontoggle-inner"></span>
-												<span class="ontoggle-switch"></span>
-											</label>
-										</div>
-									</div>
-									<div class="slide-toggle" id="second-toggle">
-										<p>Set Profile to Public</p>
-										<div class="ontoggle">
-											<input type="checkbox" name="ontoggle" class="ontoggle-checkbox" id="myonoffswitch2" checked>
-											<label class="ontoggle-label" for="myonoffswitch2">
-												<span class="ontoggle-inner"></span>
-												<span class="ontoggle-switch"></span>
-											</label>
-										</div>
-									</div>
-									<div id="settimezone">
-											<select name="timezonemenu" form="timezone" id="timezonemenu">
-												<option value="Set Timezone" selected>Set Timezone</option>
-												<option value="PST">PST</option>
-												<option value="CST">CST</option>
-												<option value="EST">EST</option>
-											</select>
-											<div id="settings-buttons">
-												<input type="submit" value="save" id="save">
-												<input type="submit" value="cancel" id="cancel">
+								<div id="settingsForm">
+									<form action="index.html" method="post">
+										<div class="slide-toggle">
+											<p>Send Email Notifications</p>
+											<div class="ontoggle">
+												<input type="checkbox" name="ontoggle" class="ontoggle-checkbox" id="myonoffswitch1" checked >
+												<label class="ontoggle-label" for="myonoffswitch1"> 
+													<span class="ontoggle-inner"></span>
+													<span class="ontoggle-switch"></span>
+												</label>
 											</div>
-									</div>
+										</div>
+										<div class="slide-toggle" id="second-toggle">
+											<p>Set Profile to Public</p>
+											<div class="ontoggle">
+												<input type="checkbox" name="ontoggle" class="ontoggle-checkbox" id="myonoffswitch2" checked>
+												<label class="ontoggle-label" for="myonoffswitch2">
+													<span class="ontoggle-inner"></span>
+													<span class="ontoggle-switch"></span>
+												</label>
+											</div>
+										</div>
+										<div id="settimezone">
+												<select name="timezonemenu" id="timezonemenu">
+													<option value="Set Timezone" selected>Set Timezone</option>
+													<option value="PST">PST</option>
+													<option value="CST">CST</option>
+													<option value="EST">EST</option>
+												</select>
+												<div id="settings-buttons">
+													<input type="submit" value="save" id="save">
+													<input type="submit" value="cancel" id="cancel">
+												</div>
+										</div>
 								</form>
 							</div>
-
 						</div>
 					</div>
+				</div> <!-- added per html checker?? -->
 			</div>
 		</div>
+	</div>
 
 
 		<script src="js/Chart.bundle.min.js"></script>

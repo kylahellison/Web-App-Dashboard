@@ -29,7 +29,8 @@
 /*=======================================
 =            DROP DOWN ALERT            =
 =======================================*/
-
+ 
+//CSS validator says this is not valid, but without it my bell icon doesn't work (having it initiate a drop-down menu)
 rect.clickable {
   stroke:#fff;
   fill:#fff;

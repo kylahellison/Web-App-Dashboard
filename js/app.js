@@ -1,3 +1,36 @@
+//Global variables
+var onOffSwitchOne = document.getElementById("myonoffswitch1");
+var onOffSwitchTwo = document.getElementById("myonoffswitch2");
+var selectZone = document.getElementById("timezonemenu");
+
+/*===========================================================
+=            CHECKING SAVED LOCAL STORAGE SETTINGS          =
+===========================================================*/
+
+window.onload = function() {
+	//variables for checking local storage settings - have to use JSON parse to not return a string and return a boolean instead
+	var checkStorage = (JSON.parse(localStorage.getItem("onoffswitchone")));
+	var checkStorageTwo = (JSON.parse(localStorage.getItem("onoffswitchtwo")));
+	var checkSelectStorage = localStorage.getItem("selectZone");
+
+
+	onOffSwitchOne.checked = checkStorage;
+	console.log(checkStorage);
+
+	onOffSwitchTwo.checked = checkStorageTwo;
+	console.log(checkStorageTwo);
+
+	if(null === checkSelectStorage) {
+		checkSelectStorage = "Select Timezone";
+	} else {
+	selectZone.value = checkSelectStorage;
+	console.log(checkSelectStorage);
+	}
+
+};
+
+
+
 /*=============================================
 =            HIDE ALERT BOX           =
 =============================================*/
@@ -339,18 +372,31 @@ function validateForm() {
 =            STORING SETTINGS IN LOCAL STORAGE            =
 =========================================================*/
 
-function storeSettings() {
-	var onOffSwitchOne = document.getElementById("myonoffswitch1");
-	var onOffSwitchTwo = document.getElementById("myonoffswitch2");
 
-	if(onOffSwitchOne.checked) {
-		localStorage.setItem(onOffSwitchOne, "true");
-		console.log("local storage set to true");
-	} else {
-		localStorage.setItem(onOffSwitchOne, "false");
-		console.log("local storage set to false");
-	}
-}
 
+//add event listener to check when the first toggle switch changes
+onOffSwitchOne.addEventListener("change", function() {
+	//checks whether onOffSwitchOne is checked or not
+	var checkStatus = this.checked;
+	//Saves the checked or unchecked value to local storage
+	localStorage.setItem("onoffswitchone", checkStatus);
+});
+
+
+//add event listener to check when the first toggle switch changes
+onOffSwitchTwo.addEventListener("change", function() {
+	//checks whether onOffSwitchOne is checked or not
+	var checkStatusTwo = this.checked;
+	//Saves the checked or unchecked value to local storage
+	localStorage.setItem("onoffswitchtwo", checkStatusTwo);
+});
+
+//add event listener to check when the selected option in the dropdown changes
+selectZone.addEventListener("change", function() {
+	//checks which select option is chosen
+	var checkSelect = this.value;
+	//Saves the selected value to local storage
+	localStorage.setItem("selectZone", checkSelect);
+});
 
 /*=====  End of STORING SETTINGS IN LOCAL STORAGE  ======*/
