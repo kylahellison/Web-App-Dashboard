@@ -30,15 +30,6 @@
 =            DROP DOWN ALERT            =
 =======================================*/
  
-//CSS validator says this is not valid, but without it my bell icon doesn't work (having it initiate a drop-down menu)
-rect.clickable {
-  stroke:#fff;
-  fill:#fff;
-  fill-opacity:0;
-  stroke-opacity:0;
-}
-
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
