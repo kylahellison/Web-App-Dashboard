@@ -59,6 +59,19 @@ document.getElementById('right').addEventListener('click', function(event) {
 	}	
 });
 
+/*================================================
+=            CHANGE ACTIVE LINK STYLE            =
+================================================*/
+
+$(document).ready(function(){
+    var $img = $('.nav-icon');
+    $img.click(function(event){
+        $img.removeClass('selected-list');
+        $(this).addClass('selected-list');
+    });
+});
+
+
 /*===============================================================
 =            CHANGE COLOR OF SELECTED TRAFFIC BUTTON            =
 ===============================================================*/

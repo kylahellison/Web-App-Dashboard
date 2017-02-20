@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/easy-autocomplete.min.css"> 
 		<link rel="stylesheet" href="css/easy-autocomplete.themes.min.css"> 
+		<link href="https://fonts.googleapis.com/css?family=Amaranth|Arimo+Web:400,700" rel="stylesheet">
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	</head>
 
@@ -54,12 +55,17 @@
 
 		<div id="wrapper">
 			<div id="left">
-				<div id="navigation">
-					<img src="images/icons/icon-dashboard.svg" alt="Dashboard icon" class="nav-icon" id="selected">
-					<img src="images/icons/icon-members.svg" alt="Members icon" class="nav-icon">
-					<img src="images/icons/icon-visits.svg" alt="Visits icon" class="nav-icon">
-					<img src="images/icons/icon-settings.svg" alt="Settings icon" class="nav-icon">
+				<div class="nav-icons" id="navigation">
+					<a href="#traffic-header-wrapper">
+					<img src="images/icons/icon-dashboard.svg" alt="Dashboard icon" class="nav-icon selected-list" id="selected-list"></a>
+					<a href="#social-stats">
+					<img src="images/icons/icon-members.svg" alt="Members icon" class="nav-icon"></a>
+					<a href="#members-activity">
+					<img src="images/icons/icon-visits.svg" alt="Visits icon" class="nav-icon"></a>
+					<a href="#settings">
+					<img src="images/icons/icon-settings.svg" alt="Settings icon" class="nav-icon"></a>
 				</div>
+
 			</div>
 
 			<div id="right">
